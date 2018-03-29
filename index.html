@@ -29,8 +29,7 @@
 
       </header>
       <section>
-        <h1>
-          <a name="publify" class="anchor" href="#publify"></a>Publify</h1>
+        <h1><a name="publify" class="anchor" href="#publify"></a>Publify</h1>
 
         <p><strong>The Ruby on Rails publishing software formerly known as Typo</strong></p>
 
@@ -59,7 +58,7 @@
         <ul>
           <li>A classic multi user blogging engine</li>
           <li>Short messages with a Twitter connection</li>
-          <li>Text filters (Markdown, Textile, SmartyPants, <a href="https://github.com/blog/821" class="user-mention">@mention</a> to link, #hashtag to link)</li>
+          <li>Text filters (Markdown, Textile, SmartyPants, @mention to link, #hashtag to link)</li>
           <li>A widgets system and a plugin API</li>
           <li>Custom themes</li>
           <li>Advanced SEO capabilities</li>
@@ -90,104 +89,110 @@
           <li>  Ruby 2.0 or 2.1</li>
           <li>  Ruby On Rails 4.1.1</li>
           <li><p>A database engine, MySQL, PgSQL or SQLite3</p></li>
-        </ul><ol>
+        </ul>
+        <ol>
           <li> Unzip Publify archive</li>
           <li> Rename database.yml.yourEngine as database.yml</li>
           <li> Edit database.yml to add your database name, login and password.</li>
-        </ol><div class="highlight highlight-bash"><pre><span class="nv">$ </span>bundle install
+        </ol>
+        <div class="highlight highlight-bash">
+          <pre><span class="nv">$ </span>bundle install
 <span class="nv">$ </span>rake db:create
 <span class="nv">$ </span>rake db:migrate
 <span class="nv">$ </span>rake db:seed
 <span class="nv">$ </span>rake assets:precompile
 <span class="nv">$ </span>rails server
-      </pre></div>
+          </pre>
+        </div>
 
-      <p>You can now launch you browser and access to 127.0.0.1:3000.</p>
+        <p>You can now launch you browser and access to 127.0.0.1:3000.</p>
 
-      <h2>
-        <a name="install-publify-on-heroku" class="anchor" href="#install-publify-on-heroku"></a>Install Publify on Heroku</h2>
+        <h2>
+          <a name="install-publify-on-heroku" class="anchor" href="#install-publify-on-heroku"></a>Install Publify on Heroku</h2>
 
-      <p>In order to install Publify on Heroku, you’ll need to do some minor tweaks.</p>
+        <p>In order to install Publify on Heroku, you’ll need to do some minor tweaks.</p>
 
-      <h3>
-        <a name="storage" class="anchor" href="#storage"></a>Storage</h3>
+        <h3>
+          <a name="storage" class="anchor" href="#storage"></a>Storage</h3>
 
-      <p>You need to setup Amazon S3 storage to be able to upload files on your
-      blog. Set Heroku config vars.</p>
+        <p>You need to setup Amazon S3 storage to be able to upload files on your
+        blog. Set Heroku config vars.</p>
 
-      <div class="highlight highlight-yaml"><pre><span class="l-Scalar-Plain">heroku config:set provider=AWS</span>
+        <div class="highlight highlight-yaml">
+          <pre><span class="l-Scalar-Plain">heroku config:set provider=AWS</span>
 <span class="l-Scalar-Plain">aws_access_key_id=YOUR_AWS_ACCESS_KEY_ID</span>
 <span class="l-Scalar-Plain">aws_secret_access_key=YOUR_AWS_SECRET_ACCESS_KEY</span>
 <span class="l-Scalar-Plain">aws_bucket=YOUR_AWS_BUCKET_NAME</span>
-      </pre></div>
+          </pre>
+        </div>
 
-      <p>To generate the Gemfile.lock, run:</p>
+        <p>To generate the Gemfile.lock, run:</p>
 
-      <div class="highlight highlight-bash"><pre><span class="nv">HEROKU</span><span class="o">=</span><span class="nb">true </span>bundle install
-      </pre></div>
+        <div class="highlight highlight-bash"><pre><span class="nv">HEROKU</span><span class="o">=</span><span class="nb">true </span>bundle install
+        </pre></div>
 
-      <p>Remove Gemfile.lock from .gitignore and commit it.</p>
+        <p>Remove Gemfile.lock from .gitignore and commit it.</p>
 
-      <p>Add the HEROKU config variable to your Heroku instance:</p>
+        <p>Add the HEROKU config variable to your Heroku instance:</p>
 
-      <div class="highlight highlight-bash"><pre>heroku config:set <span class="nv">HEROKU</span><span class="o">=</span><span class="nb">true</span>
-      </pre></div>
+        <div class="highlight highlight-bash"><pre>heroku config:set <span class="nv">HEROKU</span><span class="o">=</span><span class="nb">true</span>
+        </pre></div>
 
-      <p>Push the repository to Heroku.</p>
+        <p>Push the repository to Heroku.</p>
 
-      <p>When deploying for the first time, Heroku will automatically add a Database plugin to your instance and links it to the application.
-      After the first deployment, don't forget to run the database migration and seed.</p>
+        <p>When deploying for the first time, Heroku will automatically add a Database plugin to your instance and links it to the application.
+        After the first deployment, don't forget to run the database migration and seed.</p>
 
-      <div class="highlight highlight-bash"><pre>heroku run rake db:migrate db:seed
-      </pre></div>
+        <div class="highlight highlight-bash"><pre>heroku run rake db:migrate db:seed
+        </pre></div>
 
-      <p>If application error has occurred after migration, you need to restart Heroku server.</p>
+        <p>If application error has occurred after migration, you need to restart Heroku server.</p>
 
-      <div class="highlight highlight-bash"><pre>heroku restart
-      </pre></div>
+        <div class="highlight highlight-bash"><pre>heroku restart
+        </pre></div>
 
-      <h2>
-        <a name="resources" class="anchor" href="#resources"></a>Resources</h2>
+        <h2>
+          <a name="resources" class="anchor" href="#resources"></a>Resources</h2>
 
-      <ul>
-        <li><a href="https://github.com/publify/publify/wiki/Sidebar-plugins">Sidebar Plugins</a></li>
-        <li><a href="https://github.com/publify/publify/wiki/In-Page-Plugins">In page Plugins</a></li>
-        <li><a href="https://github.com/publify/publify/issues"><strong>Report a bug</strong></a></li>
-        <li><a href="https://github.com/publify/publify/wiki/frequently-asked-questions"><strong>Frequently Asked Questions</strong></a></li>
-        <li><a href="http://blog.publify.co">Publify blog</a></li>
-        <li><a href="https://twitter.com/getpublify">Publify on Twitter</a></li>
-        <li>IRC: #publify on irc.freenode.net</li>
-      </ul><h3>
-        <a name="maintainers" class="anchor" href="#maintainers"></a>Maintainers</h3>
+        <ul>
+          <li><a href="https://github.com/publify/publify/wiki/Sidebar-plugins">Sidebar Plugins</a></li>
+          <li><a href="https://github.com/publify/publify/wiki/In-Page-Plugins">In page Plugins</a></li>
+          <li><a href="https://github.com/publify/publify/issues"><strong>Report a bug</strong></a></li>
+          <li><a href="https://github.com/publify/publify/wiki/frequently-asked-questions"><strong>Frequently Asked Questions</strong></a></li>
+          <li><a href="http://blog.publify.co">Publify blog</a></li>
+          <li><a href="https://twitter.com/getpublify">Publify on Twitter</a></li>
+          <li>IRC: #publify on irc.freenode.net</li>
+        </ul>
+        <h3><a name="maintainers" class="anchor" href="#maintainers"></a>Maintainers</h3>
 
-      <p>This is a list of Publify maintainers. If you have committed, please add
-      your name and contact details to the list.</p>
+        <p>This is a list of Publify maintainers. If you have committed, please add
+        your name and contact details to the list.</p>
 
-      <p><strong>Frédéric de Villamil</strong> <a href="mailto:frederic@publify.co">frederic@publify.co</a>
-      blog: <a href="http://t37.net">http://t37.net</a>
-      irc: neuro`</p>
+        <p><strong>Frédéric de Villamil</strong> <a href="mailto:frederic@publify.co">frederic@publify.co</a>
+        blog: <a href="http://t37.net">http://t37.net</a>
+        irc: neuro`</p>
 
-      <p><strong>Matijs van Zuijlen</strong>
-      blog: <a href="http://www.matijs.net/blog/">http://www.matijs.net/blog/</a>
-      irc: matijs</p>
+        <p><strong>Matijs van Zuijlen</strong>
+        blog: <a href="http://www.matijs.net/blog/">http://www.matijs.net/blog/</a>
+        irc: matijs</p>
 
-      <p><strong>Thomas Lecavelier</strong>
-      blog: <a href="http://blog.ookook.fr/">http://blog.ookook.fr/</a>
-      irc: ook</p>
+        <p><strong>Thomas Lecavelier</strong>
+        blog: <a href="http://blog.ookook.fr/">http://blog.ookook.fr/</a>
+        irc: ook</p>
 
-      <p><strong>Yannick François</strong>
-      blog: <a href="http://elsif.fr">http://elsif.fr</a>
-      irc: yaf</p>
+        <p><strong>Yannick François</strong>
+        blog: <a href="http://elsif.fr">http://elsif.fr</a>
+        irc: yaf</p>
 
-      <p>And <a href="https://github.com/publify/publify/graphs/contributors">many more cool people who’ve one day or another contributed to
-        Publify</a>.</p>
+        <p>And <a href="https://github.com/publify/publify/graphs/contributors">many more cool people who’ve one day or another contributed to
+          Publify</a>.</p>
 
-      <p><strong>Original Author: Tobias Luetke</strong>
-      blog: <a href="http://blog.leetsoft.com/">http://blog.leetsoft.com/</a>
-      irc: xal</p>
+        <p><strong>Original Author: Tobias Luetke</strong>
+        blog: <a href="http://blog.leetsoft.com/">http://blog.leetsoft.com/</a>
+        irc: xal</p>
 
-      <p>Enjoy,
-      The Publify team</p>
+        <p>Enjoy,<br>
+        The Publify team</p>
       </section>
       <footer>
         <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
